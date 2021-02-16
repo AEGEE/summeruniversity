@@ -449,8 +449,14 @@ const Event = sequelize.define('event', {
         allowNull: true
     },
     course_level: {
-        type: Sequelize.STRING,
-        allowNull: true
+        type: Sequelize.ENUM('beginner', 'intermediate', 'advanced'),
+        allowNull: true,
+        validate: {
+            isIn: {
+                args: [['beginner', 'intermediate', 'advanced']],
+                msg: 'SU course level should be one of these: beginner, intermediate, advanced.'
+            }
+        }
     },
     courses: {
         type: Sequelize.TEXT,
