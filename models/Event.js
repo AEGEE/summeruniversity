@@ -312,12 +312,12 @@ const Event = sequelize.define('event', {
         }
     },
     status: {
-        type: Sequelize.ENUM('first_draft', 'first_submission', 'first_approval', 'second_draft', 'second_submission', 'second_approval', 'published'),
+        type: Sequelize.ENUM('first draft', 'first submission', 'first approval', 'second draft', 'second submission', 'second approval', 'published'),
         allowNull: false,
-        defaultValue: 'first_draft',
+        defaultValue: 'first draft',
         validate: {
             isIn: {
-                args: [['first_draft', 'first_submission', 'first_approval', 'second_draft', 'second_submission', 'second_approval', 'published']],
+                args: [['first draft', 'first submission', 'first approval', 'second draft', 'second submission', 'second approval', 'published']],
                 msg: 'Event status is not valid.'
             }
         }
