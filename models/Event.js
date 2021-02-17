@@ -333,7 +333,6 @@ const Event = sequelize.define('event', {
         defaultValue: [],
         validate: {
             isValid(value) {
-                // TODO: add optional function
                 // TODO: keep track of body ID
                 // TODO: validate for 1 main coordinator per local, 1 content manager, 1 treasurer, 1 incoming responsible
                 // TODO: in frontend two columns, 1st for name + local, 2nd for optional function
@@ -351,23 +350,27 @@ const Event = sequelize.define('event', {
                     }
 
                     if (!organizer.user_id || typeof organizer.user_id !== 'number') {
-                        throw new Error('user_id is malformed.');
+                        throw new Error('user_id is missing or malformed.');
                     }
 
                     if (!organizer.first_name || typeof organizer.first_name !== 'string') {
-                        throw new Error('first_name is malformed.');
+                        throw new Error('first_name is missing or malformed.');
                     }
 
                     if (!organizer.last_name || typeof organizer.last_name !== 'string') {
-                        throw new Error('last_name is malformed.');
+                        throw new Error('last_name is missing or malformed.');
                     }
 
-                    if (typeof organizer.role !== 'undefined' && typeof organizer.role !== 'string') {
-                        throw new Error('role is malformed.');
+                    if (!organizer.role || typeof organizer.role !== 'string') {
+                        throw new Error('role is missing or malformed.');
                     }
 
-                    if (typeof organizer.email !== 'undefined' && typeof organizer.email !== 'string') {
-                        throw new Error('email is malformed.');
+                    if (!organizer.email || typeof organizer.email !== 'string') {
+                        throw new Error('email is missing or malformed.');
+                    }
+
+                    if (!organizer.notification_email || typeof organizer.notification_email !== 'string') {
+                        throw new Error('notification_email is missing or malformed.');
                     }
                 }
             }
