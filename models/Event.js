@@ -297,14 +297,24 @@ const Event = sequelize.define('event', {
         }
     },
     status: {
-        // TODO: check how we want to do the two kinds of publication of SUs
-        type: Sequelize.ENUM('first draft', 'first submission', 'first approval', 'second draft', 'second submission', 'second approval', 'published'),
+        type: Sequelize.ENUM('first draft', 'first submission', 'first approval', 'second draft', 'second submission', 'second approval'),
         allowNull: false,
         defaultValue: 'first draft',
         validate: {
             isIn: {
-                args: [['first draft', 'first submission', 'first approval', 'second draft', 'second submission', 'second approval', 'published']],
+                args: [['first draft', 'first submission', 'first approval', 'second draft', 'second submission', 'second approval']],
                 msg: 'Event status is not valid.'
+            }
+        }
+    },
+    published: {
+        type: Sequelize.ENUM('none', 'minimal', 'full'),
+        allowNull: false,
+        defaultValue: 'none',
+        validate: {
+            isIn: {
+                args: [['none', 'minimal', 'full']],
+                msg: 'Event publication must be none, minimal or full.'
             }
         }
     },
