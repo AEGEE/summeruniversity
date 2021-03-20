@@ -103,9 +103,6 @@ workflows:
           filters:
             branches:
               ignore: main
-  test:
-    jobs:
-      - test
   docker-build-and-push:
     jobs:
       - docker-build-and-push:
