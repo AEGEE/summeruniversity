@@ -11,7 +11,7 @@ module.exports = {
             { type: Sequelize.TEXT, allowNull: true }
         );
     },
-    down: async (queryInterface) => {
+    down: async (queryInterface, Sequelize) => {
         await queryInterface.addColumn(
             'events',
             'fee_payment_date',
