@@ -67,8 +67,8 @@
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^13.2.0",
-    "@semantic-release/changelog": "^5.0.1",
-    "@semantic-release/git": "^9.0.1",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
     "codecov": "^3.8.3",
     "commitlint": "^14.1.0",
     "conventional-changelog": "^3.1.24",
@@ -83,7 +83,7 @@
     "nock": "^13.1.4",
     "nyc": "^15.1.0",
     "open-cli": "^7.0.1",
-    "semantic-release": "^17.4.7",
+    "semantic-release": "^18.0.0",
     "timekeeper": "^2.2.0"
   },
   "release": {
