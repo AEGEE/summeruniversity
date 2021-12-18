@@ -1,11 +1,9 @@
 const moment = require('moment');
 
-// TODO: add endpoints in lib/server.js
-// TODO: add stuff in seasons.js
 // TODO: add season to views of events.js
 // TODO: add Season things to frontend views
-// TODO: add season related permissions to helpers.js
 // TODO: add tests for Season and events in general hopefully
+// TODO: after deployment; add season_ids to events
 
 const { Sequelize, sequelize } = require('../lib/sequelize');
 
