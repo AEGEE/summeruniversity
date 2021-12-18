@@ -53,6 +53,11 @@ const Event = sequelize.define(
             },
             unique: true
         },
+        season: {
+            // TODO: season should become a separate Model later
+            type: Sequelize.INTEGER,
+            allowNull: true
+        },
         image: {
             type: Sequelize.STRING,
             allowNull: true
