@@ -117,11 +117,11 @@ const Event = sequelize.define(
             allowNull: true,
             validate: {
                 isDate: { msg: 'Event application end date should be set.' },
-                laterThanApplicationStart(val) {
-                    if (moment(val).isSameOrBefore(this.application_starts)) {
-                        throw new Error('Application period cannot start after or at the same time it ends.');
-                    }
-                },
+                // laterThanApplicationStart(val) {
+                //     if (moment(val).isSameOrBefore(this.application_starts)) {
+                //         throw new Error('Application period cannot start after or at the same time it ends.');
+                //     }
+                // },
                 beforeEventStart(val) {
                     if (moment(val).isSameOrAfter(this.starts)) {
                         throw new Error('Application period cannot end before or at the same time the event starts.');
