@@ -1,5 +1,5 @@
 # FIXME use alpine
-FROM node:18.18.0
+FROM node:21.5.0
 
 RUN mkdir -p /usr/app/src \
 	&& mkdir -p /usr/app/media/headimages \
