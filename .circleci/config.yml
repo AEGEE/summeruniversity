@@ -13,7 +13,6 @@ jobs:
         environment:
           POSTGRES_PASSWORD: config.test.postgres.password
     parallelism: 4
-    resource_class: large
     steps:
       - checkout
       - node/install-packages
@@ -31,7 +30,6 @@ jobs:
   build:
     docker:
       - image: cimg/base:2024.09
-    resource_class: large
     steps:
       - checkout
       - setup_remote_docker:
@@ -40,7 +38,6 @@ jobs:
   eslint:
     docker:
       - image: cimg/node:20.17.0
-    resource_class: large
     steps:
       - checkout
       - node/install-packages
@@ -53,7 +50,6 @@ jobs:
   yamllint:
     docker:
       - image: cimg/python:3.12.6
-    resource_class: large
     steps:
       - checkout
       - run: pip install yamllint
@@ -61,7 +57,6 @@ jobs:
   shellcheck:
     docker:
       - image: cimg/base:2024.09
-    resource_class: large
     steps:
       - checkout
       - shellcheck/install
@@ -69,7 +64,6 @@ jobs:
   audit:
     docker:
       - image: cimg/node:20.17.0
-    resource_class: large
     steps:
       - checkout
       - run: npm audit --production
@@ -116,7 +110,6 @@ jobs:
   docker-build-and-push:
     docker:
       - image: cimg/node:20.17.0
-    resource_class: large
     steps:
       - checkout
       - setup_remote_docker:
