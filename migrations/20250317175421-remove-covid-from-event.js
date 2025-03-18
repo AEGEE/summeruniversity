@@ -13,7 +13,7 @@ module.exports = {
             'status',
             { type: Sequelize.ENUM('first draft', 'first submission', 'first approval', 'second draft', 'second submission', 'second approval'), allowNull: false }
         );
-        
+
         // Change 'published' column to remove "covid" as an option
         await queryInterface.changeColumn(
             'events',
