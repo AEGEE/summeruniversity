@@ -58,6 +58,14 @@ jobs:
       - checkout
       - run: pip install yamllint
       - run: yamllint -d .yamllint.yml .
+  hadolint:
+    docker:
+      - image: hadolint/hadolint:latest-alpine
+    steps:
+      - checkout
+      - run:
+          name: Lint Dockerfiles
+          command: hadolint $(find . -name '*Dockerfile*')
   shellcheck:
     docker:
       - image: cimg/base:2025.08
